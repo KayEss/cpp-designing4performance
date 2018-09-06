@@ -13,3 +13,9 @@
 [submodule "crypto++"]
 	path = libs/crypto++
 	url = git@github.com:KayEss/fost-crypto.git
+[submodule "libs/fost-postgres"]
+	path = libs/fost-postgres
+	url = git@github.com:KayEss/fost-postgres.git
+[submodule "libs/PostgreSQL"]
+	path = libs/PostgreSQL
+	url = git@github.com:KayEss/fost-libpq.git
