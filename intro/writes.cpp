@@ -18,9 +18,9 @@ int main() {
         const auto ended = std::chrono::steady_clock::now();
         const auto ns = std::chrono::duration_cast<
             std::chrono::nanoseconds>(ended - started).count();
-        std::cout << (size >> 10) << "KB chunks used " << writes <<
-            " writes taking " << (ns / 1000) << "us "
-            "(" << (1000.0 * ns / data.size()) << "ns per byte)" << std::endl;
+        std::cout << (size >> 10) << "KB per write " << writes <<
+            " writes taking " << (ns / 1000) << "us (" << (ns / writes) << "ns each). "
+            "Per byte " << (1000.0 * ns / data.size()) << "ns" << std::endl;
     };
     /// Perform lots of small allocations
     write(1 << 10);
