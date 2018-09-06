@@ -13,3 +13,9 @@ target_compile_features(select PRIVATE cxx_std_17)
 target_link_libraries(select fost-postgres)
 install(TARGETS select EXPORT select RUNTIME DESTINATION bin)
 
+
+add_executable(select.buffer select.buffer.cpp)
+target_compile_features(select.buffer PRIVATE cxx_std_17)
+target_link_libraries(select.buffer fost-postgres)
+install(TARGETS select.buffer EXPORT select.buffer RUNTIME DESTINATION bin)
+
