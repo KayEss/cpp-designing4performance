@@ -7,3 +7,9 @@ add_executable(writes writes.cpp)
 target_compile_features(writes PRIVATE cxx_std_17)
 install(TARGETS writes EXPORT writes RUNTIME DESTINATION bin)
 
+
+add_executable(select select.cpp)
+target_compile_features(select PRIVATE cxx_std_17)
+target_link_libraries(select fost-postgres)
+install(TARGETS select EXPORT select RUNTIME DESTINATION bin)
+
