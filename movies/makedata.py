@@ -6,7 +6,6 @@ import sys
 
 
 if __name__ == "__main__":
-
     try:
         psycopg2.connect(database='pacpp')
         print("Managed to connect... best delete")
@@ -29,12 +28,13 @@ if __name__ == "__main__":
             id int NOT NULL,
             CONSTRAINT smalltable_pk PRIMARY KEY (id),
             name_en text NOT NULL,
-            popularity real
+            popularity real,
+            blob json
         );
     ''')
     cnx.commit()
 
-    with open("movie_ids_07_18_2018.json", "rt") as movies:
+    with open("../movies/movie_ids_07_18_2018.json", "rt") as movies:
         count = 0
         while movies:
             count += 1
@@ -44,8 +44,8 @@ if __name__ == "__main__":
                 print(count, " rows inserted")
                 sys.exit(0)
             movie = loads(moviestr)
-            values = (movie["id"], movie["original_title"], movie["popularity"])
-            cursor.execute('''INSERT INTO films VALUES (%s, %s, %s)''', values)
+            values = (movie["id"], movie["original_title"], movie["popularity"], moviestr)
+            cursor.execute('''INSERT INTO films VALUES (%s, %s, %s, %s)''', values)
             if count % 20 == 0:
                 print(*values)
                 cnx.commit()
