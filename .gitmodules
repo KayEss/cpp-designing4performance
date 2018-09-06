@@ -1,15 +1,15 @@
 [submodule "boost"]
-	path = boost
+	path = libs/boost
 	url = git@github.com:KayEss/fost-boost.git
 [submodule "fost-base"]
-	path = fost-base
+	path = libs/fost-base
 	url = git@github.com:KayEss/fost-base.git
 [submodule "cord"]
-	path = cord
+	path = libs/cord
 	url = git@github.com:KayEss/f5-cord.git
 [submodule "threading"]
-	path = threading
+	path = libs/threading
 	url = git@github.com:KayEss/f5-threading.git
 [submodule "crypto++"]
-	path = crypto++
+	path = libs/crypto++
 	url = git@github.com:KayEss/fost-crypto.git
