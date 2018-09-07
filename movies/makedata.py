@@ -27,9 +27,10 @@ if __name__ == "__main__":
         CREATE TABLE films (
             id int NOT NULL,
             CONSTRAINT smalltable_pk PRIMARY KEY (id),
+            adult bool NOT NULL,
             name_en text NOT NULL,
-            popularity real,
-            blob json
+            popularity real NOT NULL,
+            blob json NOT NULL
         );
     ''')
     cnx.commit()
@@ -44,8 +45,8 @@ if __name__ == "__main__":
                 print(count, " rows inserted")
                 sys.exit(0)
             movie = loads(moviestr)
-            values = (movie["id"], movie["original_title"], movie["popularity"], moviestr)
-            cursor.execute('''INSERT INTO films VALUES (%s, %s, %s, %s)''', values)
+            values = (movie["id"], movie["adult"], movie["original_title"], movie["popularity"], moviestr)
+            cursor.execute('''INSERT INTO films VALUES (%s, %s, %s, %s, %s)''', values)
             if count % 20 == 0:
                 print(*values)
                 cnx.commit()
