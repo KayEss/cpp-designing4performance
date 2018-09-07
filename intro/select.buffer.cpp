@@ -32,7 +32,7 @@ void stringify(const fostlib::json &j, std::string &into) {
                 } else {
                     first = false;
                 }
-                into += escape(p.first);
+                escape(p.first, into);
                 into += ':';
                 stringify(p.second, into);
             }
