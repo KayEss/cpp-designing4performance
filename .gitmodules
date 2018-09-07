@@ -19,3 +19,6 @@
 [submodule "libs/PostgreSQL"]
 	path = libs/PostgreSQL
 	url = git@github.com:KayEss/fost-libpq.git
+[submodule "libs/pgasio"]
+	path = libs/pgasio
+	url = git@github.com:KayEss/pgasio.git
