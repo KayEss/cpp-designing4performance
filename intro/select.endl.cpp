@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
         }
         std::cout << stringify(name);
     }
-    std::cout << '\n';
+    std::cout << std::endl;
     for ( auto &row : rs ) {
         bool first{true};
         for ( const fostlib::json &field : row ) {
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
             }
             std::cout << stringify(field);
         }
-        std::cout << '\n';
+        std::cout << std::endl;
     }
 }
 
