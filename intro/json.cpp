@@ -10,8 +10,7 @@ inline void to_hex(std::string &into, fostlib::utf16 c, std::size_t digits = 3) 
 }
 
 
-std::string escape(fostlib::string s) {
-    std::string into;
+void escape(f5::u8view s, std::string &into) {
     into += '"';
     for ( auto i : s ) {
         switch( i ) {
@@ -36,6 +35,5 @@ std::string escape(fostlib::string s) {
         }
     }
     into += '\"';
-    return into;
 }
 

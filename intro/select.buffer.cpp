@@ -1,9 +1,47 @@
+#include "json.hpp"
 #include <iostream>
 #include <fost/postgres>
 
 
 void stringify(const fostlib::json &j, std::string &into) {
-    fostlib::json::unparse(into, j, false);
+    j.apply_visitor(
+        [&](std::monostate) {
+            into += "null";
+        },
+        [&](bool b) {
+            into += b ? "true" : "false";
+        },
+        [&](int64_t i) {
+            into += std::to_string(i);
+        },
+        [&](double d) {
+            into += std::to_string(d);
+        },
+        [&](f5::lstring s) {
+            escape(s, into);
+        },
+        [&](fostlib::json::string_p s) {
+            escape(*s, into);
+        },
+        [&](fostlib::json::object_p o) {
+            into += '{';
+            bool first{true};
+            for ( const auto &p : *o ) {
+                if ( not first ) {
+                    into += ',';
+                } else {
+                    first = false;
+                }
+                into += escape(p.first);
+                into += ':';
+                stringify(p.second, into);
+            }
+            into += '}';
+        },
+        [&](fostlib::json::array_p a) {
+            throw fostlib::exceptions::not_implemented(__PRETTY_FUNCTION__);
+        }
+    );
 }
 
 
