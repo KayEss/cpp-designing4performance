@@ -27,3 +27,7 @@ add_executable(select.buffer select.buffer.cpp)
 target_link_libraries(select.buffer j fost-postgres)
 install(TARGETS select.buffer EXPORT select.buffer RUNTIME DESTINATION bin)
 
+# # Use std::to_chars
+# add_executable(select.to_chars select.to_chars.cpp)
+# target_link_libraries(select.to_chars j fost-postgres)
+# install(TARGETS select.to_chars EXPORT select.to_chars RUNTIME DESTINATION bin)
