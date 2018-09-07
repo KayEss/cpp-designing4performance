@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set +ex
+
+export PGDATABASE=$2
+
+ninja
+./intro/memory
+./intro/writes
+
+echo psql
+time psql -c "$1" > /dev/null
+
+echo With endl
+time ./intro/select.endl "$1" > /dev/null
+
+echo Without endl
+time ./intro/select.simple "$1" > /dev/null
+
+echo Buffered output
+time ./intro/select.buffer "$1" > /dev/null
+
+# echo Buffered using std::to_chars
+# time ./intro/select.to_chars "$1" > /dev/null
+
