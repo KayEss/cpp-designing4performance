@@ -16,6 +16,9 @@ time ./intro/select.endl "$1" > /dev/null
 echo Without endl
 time ./intro/select.simple "$1" > /dev/null
 
+echo Turn off stdout buffering
+time ./intro/select.unbuffered "$1" > /dev/null
+
 echo Buffered output
 time ./intro/select.buffer "$1" > /dev/null
 

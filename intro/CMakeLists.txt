@@ -22,6 +22,11 @@ add_executable(select.simple select.simple.cpp)
 target_link_libraries(select.simple j fost-postgres)
 install(TARGETS select.simple EXPORT select.simple RUNTIME DESTINATION bin)
 
+# Turn off buffering
+add_executable(select.unbuffered select.unbuffered.cpp)
+target_link_libraries(select.unbuffered j fost-postgres)
+install(TARGETS select.unbuffered EXPORT select.unbuffered RUNTIME DESTINATION bin)
+
 # Use a string buffer
 add_executable(select.buffer select.buffer.cpp)
 target_link_libraries(select.buffer j fost-postgres)
