@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
     }
 
     /// Turns off the stdout buffering
-    setvbuf(stdout, NULL, _IONBF, 0);
+    std::setvbuf(stdout, NULL, _IONBF, 0);
 
     fostlib::pg::connection cnx;
     auto rs = cnx.exec(argv[1]);
