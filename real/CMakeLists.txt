@@ -36,3 +36,8 @@ install(TARGETS select.buffer EXPORT select.buffer RUNTIME DESTINATION bin)
 # add_executable(select.to_chars select.to_chars.cpp)
 # target_link_libraries(select.to_chars j fost-postgres)
 # install(TARGETS select.to_chars EXPORT select.to_chars RUNTIME DESTINATION bin)
+
+# Use pgasio
+add_executable(fast fast.cpp)
+target_link_libraries(fast j f5-pgasio)
+install(TARGETS fast EXPORT fast RUNTIME DESTINATION bin)
