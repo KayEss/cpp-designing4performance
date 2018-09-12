@@ -20,6 +20,6 @@ time ./real/select.buffer "$1" > /dev/null
 
 # time ./real/select.to_chars "$1" > /dev/null
 
-time ./real/fast "$1" > /dev/null
+time ./real/select.pgasio "$1" > /dev/null
 
 time ./libs/pgasio/examples/pg-asio-csj -d "${PGDATABASE}" "$1" > /dev/null

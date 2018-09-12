@@ -38,6 +38,6 @@ install(TARGETS select.buffer EXPORT select.buffer RUNTIME DESTINATION bin)
 # install(TARGETS select.to_chars EXPORT select.to_chars RUNTIME DESTINATION bin)
 
 # Use pgasio
-add_executable(fast fast.cpp)
-target_link_libraries(fast j f5-pgasio)
-install(TARGETS fast EXPORT fast RUNTIME DESTINATION bin)
+add_executable(select.pgasio select.pgasio.cpp)
+target_link_libraries(select.pgasio j f5-pgasio)
+install(TARGETS select.pgasio EXPORT select.pgasio RUNTIME DESTINATION bin)
