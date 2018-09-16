@@ -12,10 +12,11 @@ using value_type = std::variant<
     std::monostate,
     bool, int64_t, double,
     std::string,
-    array_type. object_type>;
+    array_type, object_type>;
 
     value_type value;
 };
 
 
+std::string escape(const std::string &);
 std::string stringify(const json &);
