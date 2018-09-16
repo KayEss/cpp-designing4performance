@@ -20,7 +20,7 @@ int main() {
             std::chrono::nanoseconds>(ended - started).count();
         std::cout << (size >> 10) << "KB per write " << writes <<
             " writes taking " << (ns / 1000) << "us (" << (ns / writes) << "ns each). "
-            "Per byte " << (1000.0 * ns / data.size()) << "ns" << std::endl;
+            "Per byte " << (1000.0 * ns / data.size()) << "ps" << std::endl;
     };
     /// Perform lots of small allocations
     write(1 << 10);

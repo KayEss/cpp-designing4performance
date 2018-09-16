@@ -16,7 +16,7 @@ int main() {
         const auto ns = std::chrono::duration_cast<
             std::chrono::nanoseconds>(ended - started).count();
         std::cout << (size >> 10) << "KB per allocation. " <<
-            allocs  << " allocations: " << ns / 1000 << "us (" << (ns / allocs) << "ns each). "
+            allocs  << " allocations: " << ns / 1000.0 << "us (" << (ns / allocs) << "ns each). "
             "Per byte: " << (1000.0 * ns / target) <<  "ps" << std::endl;
     };
     /// Perform lots of small allocations
