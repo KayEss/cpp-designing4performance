@@ -20,3 +20,4 @@ using value_type = std::variant<
 
 std::string escape(const std::string &);
 std::string stringify(const json &);
+void stringify(const json &, std::string&);
