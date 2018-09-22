@@ -1,2 +1,5 @@
 /build.tmp/
 /dist/
+/movies/collection_ids*
+/movies/movie_ids*
+/movies/person_ids*
