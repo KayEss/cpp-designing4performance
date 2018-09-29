@@ -8,7 +8,7 @@ int main() {
     std::vector<char> data(10 << 20);
     std::ifstream("/dev/urandom", std::ios::binary).read(data.data(), data.size());
     const auto write = [&data](std::size_t size) {
-        std::ofstream out("/dev/null", std::ios::binary);
+        std::ofstream out("random.dat", std::ios::binary);
         const auto started = std::chrono::steady_clock::now();
         std::size_t writes{};
         for ( std::size_t i{}; i < data.size(); i += size ) {
@@ -19,7 +19,7 @@ int main() {
         const auto ns = std::chrono::duration_cast<
             std::chrono::nanoseconds>(ended - started).count();
         std::cout << (size >> 10) << "KB per write " << writes <<
-            " writes taking " << (ns / 1000) << "us (" << (ns / writes) << "ns each). "
+            " writes taking " << (ns / 1000000) << "ms (" << (ns / writes / 1000) << "us each). "
             "Per byte " << (1000.0 * ns / data.size()) << "ps" << std::endl;
     };
     /// Perform lots of small allocations

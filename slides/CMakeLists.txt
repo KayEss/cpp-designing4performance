@@ -5,6 +5,7 @@ add_executable(slide1 memory.cpp)
 add_executable(slide2 writes.cpp)
 
 add_library(parts STATIC
+        barrier.cpp
         select.endl.cpp
         select.buffer.cpp
     )
