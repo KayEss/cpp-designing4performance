@@ -6,6 +6,7 @@ add_executable(slide2 writes.cpp)
 
 add_library(parts STATIC
         barrier.cpp
+        row.cpp
         select.endl.cpp
         select.buffer.cpp
     )
