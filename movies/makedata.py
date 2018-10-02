@@ -6,20 +6,7 @@ import sys
 
 
 if __name__ == "__main__":
-    try:
-        psycopg2.connect(database='pacpp')
-        print("Managed to connect... best delete")
-        with psycopg2.connect('') as cnx:
-            cnx.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-            cnx.cursor().execute("DROP DATABASE pacpp")
-    except:
-        pass
-    print("Create database 'pacpp'")
     cnx = psycopg2.connect('')
-    cnx.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-    cnx.cursor().execute("CREATE DATABASE pacpp")
-
-    cnx = psycopg2.connect('dbname=pacpp')
     cnx.set_isolation_level(ISOLATION_LEVEL_SERIALIZABLE)
     cursor = cnx.cursor()
 
