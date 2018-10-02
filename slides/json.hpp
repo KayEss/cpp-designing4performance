@@ -19,5 +19,5 @@ using value_type = std::variant<
 
 
 std::string escape(const std::string &);
-std::string stringify(const json &);
+std::string stringify(const json &j);
 void stringify(const json &, std::string&);

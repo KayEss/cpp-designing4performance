@@ -73,7 +73,7 @@ class shared_string {
     std::shared_ptr<const char> data_;
 
 template<typename Traits, typename Allocator>
-shared_string(std::string<char, Traits, Allocator> s)
+shared_string(std::basic_string<char, Traits, Allocator> s)
 : size_{s.size()},
     data_{s.data(), [o = std::move(s)](const auto &&) {}}
 {
