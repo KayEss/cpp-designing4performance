@@ -42,13 +42,21 @@ class string_view {
 
 template<typename T>
 class shared_vector {
-    std::shared_ptr<const T> data_;
     std::size_t size_;
+    std::shared_ptr<const T> data_;
 
     shared_vector(std::shared_ptr<const T>, std::size_t);
 public:
     shared_vector();
     auto size() const { return size_; }
+
+
+shared_vector(std::vector<T> v)
+: size_{v.size()},
+    data_{v.data(), [o = std::move(v)](auto &&) {}}
+{
+}
+
 
 shared_vector split(const std::size_t s) {
     auto r = shared_vector{data_, s};
