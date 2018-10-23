@@ -34,7 +34,7 @@ The command lines can be found in the slides. They assume the build directory is
 
 ### Movies
 
-The film list is from the [daily list export](https://developers.themoviedb.org/3/getting-started/daily-file-exports) from [The Movie DB](https://www.themoviedb.org/). You'll need to fix up the file name in [./movies/makedata.py]. You'll also need to install the Python packages outlined in [./movies/setup.pip]. Running `pip install -r setup.pip` from that directory should suffice (assumes Python 3 is the default).
+The film list is from the [daily list export](https://developers.themoviedb.org/3/getting-started/daily-file-exports) from [The Movie DB](https://www.themoviedb.org/). You'll need to fix up the file name in [movies/makedata.py](./movies/makedata.py). You'll also need to install the Python packages outlined in [movies/setup.pip](./movies/setup.pip). Running `pip install -r setup.pip` from that directory should suffice (assumes Python 3 is the default).
 
 
 ### `pgbench`
