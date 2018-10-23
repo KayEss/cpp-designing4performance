@@ -10,8 +10,8 @@ The actual code that was run is in the `real` folder, and the code for the slide
 Normal cmake rules apply:
 
 ```bash
-git clone --recursive git@github.com:KayEss/pacificpp18.git
-mkdir pacificpp18/build.tmp; cd pacificpp18/build.tmp
+git clone --recursive git@github.com:KayEss/cpp-designing4performance.git
+mkdir cpp-designing4performance/build.tmp; cd cpp-designing4performance/build.tmp
 ccmake .. -DCMAKE_BUILD_TYPE=Release -G Ninja
 ninja
 ```
